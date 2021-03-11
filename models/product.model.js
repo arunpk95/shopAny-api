@@ -10,6 +10,7 @@ const productSchema = new Schema({
    deliveryFee:Number,
    discount:Number,
    expectedDeliveryDate:Number,
+   images:[String],
    sellerId:String,
    categoryId:String,
 });
