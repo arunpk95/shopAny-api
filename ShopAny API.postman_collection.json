@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "f6fc477d-88ca-4551-a38d-bc66ca211e92",
+		"name": "ShopAny API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Logitech Keyboard\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Logitech Keyboard\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 129.99,\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"newseller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/6045cc4f4b08a171905750c1/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"6045cc4f4b08a171905750c1",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by Seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/seller/newseller/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seller",
+								"newseller",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/category/8iwdfnusdinbgiudu89fg/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"8iwdfnusdinbgiudu89fg",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/product/6045cc304b08a171905750c0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"6045cc304b08a171905750c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromPrice\":0,\r\n    \"toPrice\":1299,\r\n    \"category\":\"8iwdfnusdinbgiudu89f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

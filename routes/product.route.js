@@ -16,4 +16,7 @@ exports.routesConfig = function (app) {
     app.delete('/api/product/:id',[
         ProductController.delete
     ])
+    app.get('/api/products',[
+        ProductController.getProducts
+    ])
 };

@@ -6,6 +6,7 @@ const productSchema = new Schema({
    description:String,
    quantity:Number,
    price:Number,
+   rating:Number,
    sellerId:String,
    categoryId:String,
 });
@@ -31,4 +32,17 @@ exports.updateProduct = (id,productData) => {
 exports.deleteProduct = (id) => {
     const result = ProductsSchema.findOneAndDelete({_id:id});
     return result;
+}
+
+exports.getProducts = (fromPrice,toPrice, filterCategory) => {
+    if(filterCategory === "")
+    {
+        const products = ProductsSchema.find({"price":{$gte: fromPrice, $lte: toPrice}});
+        return products;
+    }
+    else
+    {
+        const products = ProductsSchema.find({"price":{$gte: fromPrice, $lte: toPrice},"categoryId":filterCategory});
+        return products;
+    }
 }

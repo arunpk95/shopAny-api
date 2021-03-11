@@ -60,3 +60,16 @@ exports.getProductsbyCategoryId = (req, res) => {
         res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
     })
 }
+
+
+exports.getProducts = (req, res) => {
+    ProductModel.getProducts(req.body.fromPrice, req.body.toPrice, req.body.category)
+    .then((result) => {
+        res.status(201).send({ status: "success", products: result });
+        return;
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+    })
+}
