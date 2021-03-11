@@ -9,6 +9,7 @@ const productSchema = new Schema({
    rating:Number,
    deliveryFee:Number,
    discount:Number,
+   expectedDeliveryDate:Number,
    sellerId:String,
    categoryId:String,
 });
