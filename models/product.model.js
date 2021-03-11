@@ -7,6 +7,8 @@ const productSchema = new Schema({
    quantity:Number,
    price:Number,
    rating:Number,
+   deliveryFee:Number,
+   discount:Number,
    sellerId:String,
    categoryId:String,
 });
