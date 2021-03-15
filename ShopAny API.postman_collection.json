@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Logitech Keyboard\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\"\r\n}",
+							"raw": "{\r\n   \"name\": \"Logitech Keyboard\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"rating\":3,\r\n   \"deliveryFee\":10,\r\n   \"discount\":5,\r\n   \"expectedDeliveryDate\":5,\r\n   \"images\":[\"https://www.logitech.com/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png\",\r\n   \"https://resource.logitech.com/w_420,h_420,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/keyboards/mx-keys/gallery/deu-mx-keys-gallery-npr-graphite-3-4-front.png\"],\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -139,7 +139,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fromPrice\":0,\r\n    \"toPrice\":1299,\r\n    \"category\":\"8iwdfnusdinbgiudu89f\"\r\n}",
+							"raw": "{\r\n    \"fromPrice\":0,\r\n    \"toPrice\":2299,\r\n    \"category\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,6 +155,72 @@
 							"path": [
 								"api",
 								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
 							]
 						}
 					},
