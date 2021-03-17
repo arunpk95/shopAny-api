@@ -135,8 +135,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromPrice\": 0,\r\n    \"toPrice\": 3000,\r\n    \"category\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:3000/api/products?fromPrice=0&toPrice=22990&category=",
+							"raw": "localhost:3000/api/products",
 							"host": [
 								"localhost"
 							],
@@ -144,20 +153,6 @@
 							"path": [
 								"api",
 								"products"
-							],
-							"query": [
-								{
-									"key": "fromPrice",
-									"value": "0"
-								},
-								{
-									"key": "toPrice",
-									"value": "22990"
-								},
-								{
-									"key": "category",
-									"value": ""
-								}
 							]
 						}
 					},
