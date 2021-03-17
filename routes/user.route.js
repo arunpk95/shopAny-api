@@ -17,4 +17,14 @@ exports.routesConfig = function (app) {
     app.post('/api/user/:userId/getFavs',[
         UsersController.getFavs
     ])
+
+    app.post('/api/user/:userId/addCart',[
+        UsersController.addCart
+    ])
+    app.post('/api/user/:userId/removeCart/:productId',[
+        UsersController.removeCart
+    ])
+    app.post('/api/user/:userId/getCart',[
+        UsersController.getCart
+    ])
 };

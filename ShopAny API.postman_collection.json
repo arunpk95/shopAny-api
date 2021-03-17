@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Logitech Keyboard\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"rating\":3,\r\n   \"deliveryFee\":10,\r\n   \"discount\":5,\r\n   \"expectedDeliveryDate\":5,\r\n   \"images\":[\"https://www.logitech.com/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png\",\r\n   \"https://resource.logitech.com/w_420,h_420,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/keyboards/mx-keys/gallery/deu-mx-keys-gallery-npr-graphite-3-4-front.png\"],\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\"\r\n}",
+							"raw": "{\r\n   \"name\": \"Logitech Keyboard v1\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"rating\":3,\r\n   \"deliveryFee\":10,\r\n   \"discount\":5,\r\n   \"expectedDeliveryDate\":5,\r\n   \"images\":[\"https://www.logitech.com/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png\",\r\n   \"https://resource.logitech.com/w_420,h_420,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/keyboards/mx-keys/gallery/deu-mx-keys-gallery-npr-graphite-3-4-front.png\"],\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\",\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -175,7 +175,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1\r\n}\r\n",
+							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1a@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -204,7 +204,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.coma\"\r\n}\r\n",
+							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1a@abc.coma\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -232,7 +232,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/addFav/604a7a2b26b4a521549449b8",
+							"raw": "localhost:3000/api/user/60518250c60b8858e4883295/addFav/60517f1cc75fe7593cea5e2d",
 							"host": [
 								"localhost"
 							],
@@ -240,9 +240,39 @@
 							"path": [
 								"api",
 								"user",
-								"604eef4472af9d0cdc4e5834",
+								"60518250c60b8858e4883295",
 								"addFav",
-								"604a7a2b26b4a521549449b8"
+								"60517f1cc75fe7593cea5e2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"60517ee6f6e9e549dcf6ff24\",\r\n    \"quantity\":10,\r\n    \"cartType\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/addCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"60518967ed36fa05ec9b4ef1",
+								"addCart"
 							]
 						}
 					},
@@ -254,7 +284,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/getFavs",
+							"raw": "localhost:3000/api/user/60518250c60b8858e4883295/getFavs",
 							"host": [
 								"localhost"
 							],
@@ -262,8 +292,29 @@
 							"path": [
 								"api",
 								"user",
-								"604eef4472af9d0cdc4e5834",
+								"60518250c60b8858e4883295",
 								"getFavs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/getCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"60518967ed36fa05ec9b4ef1",
+								"getCart"
 							]
 						}
 					},
@@ -275,7 +326,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/removeFav/60516f415384ef3be0c419231",
+							"raw": "localhost:3000/api/user/60518250c60b8858e4883295/removeFav/604a7a2b26b4a521549449b8",
 							"host": [
 								"localhost"
 							],
@@ -283,9 +334,31 @@
 							"path": [
 								"api",
 								"user",
-								"604eef4472af9d0cdc4e5834",
+								"60518250c60b8858e4883295",
 								"removeFav",
-								"60516f415384ef3be0c419231"
+								"604a7a2b26b4a521549449b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/removeCart/60517ee6f6e9e549dcf6ff24",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"60518967ed36fa05ec9b4ef1",
+								"removeCart",
+								"60517ee6f6e9e549dcf6ff24"
 							]
 						}
 					},

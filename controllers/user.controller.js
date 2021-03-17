@@ -18,7 +18,7 @@ exports.insert = (req, res) => {
 exports.getUserByEmailPassword = (req, res) => {
     UserModel.getUserByEmailPassword(req.body.email,req.body.password)
     .then((result) => {
-        res.status(201).send({ status: "success", user: result });
+        res.status(200).send({ status: "success", user: result });
         return;
     })
     .catch(err => {
@@ -30,7 +30,7 @@ exports.getUserByEmailPassword = (req, res) => {
 exports.addFav = (req, res) => {
     UserModel.addFav(req.params.userId, req.params.productId)
     .then((result) => {
-        res.status(201).send({ status: "success", user: result });
+        res.status(200).send({ status: "success", user: result });
         return;
     })
     .catch(err => {
@@ -42,7 +42,7 @@ exports.addFav = (req, res) => {
 exports.removeFav = (req, res) => {
     UserModel.removeFav(req.params.userId, req.params.productId)
     .then((result) => {
-        res.status(201).send({ status: "success", user: result });
+        res.status(200).send({ status: "success", user: result });
         return;
     })
     .catch(err => {
@@ -56,13 +56,50 @@ exports.getFavs = (req, res) => {
     .then((userResult) => {
         ProductModel.getByIds(userResult[0].favourites)
         .then((result) => {
-            res.status(201).send({ status: "success", products: result });
+            
+            res.status(200).send({ status: "success", products: result });
             return;
         })
         .catch(err => {
             console.log(err);
             res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
         })
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+    })
+}
+
+exports.addCart = (req, res) => {
+    UserModel.addCart(req.params.userId, req.body.productId, req.body.quantity, req.body.cartType)
+    .then((result) => {
+        res.status(200).send({ status: "success", user: result });
+        return;
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+    })
+}
+
+exports.removeCart = (req, res) => {
+    UserModel.removeCart(req.params.userId, req.params.productId)
+    .then((result) => {
+        res.status(200).send({ status: "success", user: result });
+        return;
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+    })
+}
+
+exports.getCart = (req, res) => {
+    UserModel.getCart(req.params.userId)
+    .then((result) => {
+        res.status(200).send({ status: "success", user: result });
+        return;
     })
     .catch(err => {
         console.log(err);
