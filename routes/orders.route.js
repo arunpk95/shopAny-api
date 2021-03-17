@@ -7,7 +7,7 @@ exports.routesConfig = function (app) {
     app.post('/api/order/edit', [
         OrderController.update
     ]);
-    app.delete('/api/order/:id',[
+    app.post('/api/order/:id',[
         OrderController.delete
     ])
 };

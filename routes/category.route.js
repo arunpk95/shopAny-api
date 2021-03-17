@@ -7,7 +7,7 @@ exports.routesConfig = function (app) {
     app.post('/api/category/edit', [
         CategoryController.update
     ]);
-    app.delete('/api/category/:id',[
+    app.post('/api/category/:id',[
         CategoryController.delete
     ])
 };

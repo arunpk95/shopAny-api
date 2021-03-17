@@ -5,7 +5,7 @@ exports.routesConfig = function (app) {
     app.post('/api/user/add', [
         UsersController.insert
     ]);
-    app.get('/api/user/login', [
+    app.post('/api/user/login', [
         UsersController.getUserByEmailPassword
     ]);
 };

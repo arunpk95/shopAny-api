@@ -204,7 +204,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.com\"\r\n}\r\n",
+							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1@abc.coma\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"

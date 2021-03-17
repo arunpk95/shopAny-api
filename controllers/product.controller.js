@@ -45,14 +45,14 @@ exports.getProductsbySellerId = (req, res) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+        res.status(200).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
     })
 }
 
 exports.getProductsbyCategoryId = (req, res) => {
     ProductModel.getProductsByCategoryId(req.params.categoryId, req.body)
     .then((result) => {
-        res.status(201).send({ status: "success", products: result });
+        res.status(200).send({ status: "success", products: result });
         return;
     })
     .catch(err => {
@@ -65,7 +65,7 @@ exports.getProductsbyCategoryId = (req, res) => {
 exports.getProducts = (req, res) => {
     ProductModel.getProducts(req.body.fromPrice, req.body.toPrice, req.body.category)
     .then((result) => {
-        res.status(201).send({ status: "success", products: result });
+        res.status(200).send({ status: "success", products: result });
         return;
     })
     .catch(err => {
