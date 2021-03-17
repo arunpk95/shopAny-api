@@ -13,7 +13,7 @@ exports.routesConfig = function (app) {
     app.post('/api/seller/:sellerId/products',[
         ProductController.getProductsbySellerId
     ])
-    app.post('/api/product/:id',[
+    app.post('/api/product/delete/:id',[
         ProductController.delete
     ])
     app.post('/api/products',[

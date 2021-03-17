@@ -8,4 +8,13 @@ exports.routesConfig = function (app) {
     app.post('/api/user/login', [
         UsersController.getUserByEmailPassword
     ]);
+    app.post('/api/user/:userId/addFav/:productId',[
+        UsersController.addFav
+    ])
+    app.post('/api/user/:userId/removeFav/:productId',[
+        UsersController.removeFav
+    ])
+    app.post('/api/user/:userId/getFavs',[
+        UsersController.getFavs
+    ])
 };

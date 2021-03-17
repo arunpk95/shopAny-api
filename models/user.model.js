@@ -7,7 +7,8 @@ const userSchema = new Schema({
     password:String,
     phoneNumber:String,
     address:String,
-    userType:Number    
+    userType:Number,
+    favourites:[String]    
 });
 
 const UsersSchema = mongoose.model('users',userSchema);
@@ -19,5 +20,21 @@ exports.createUser = (userData) => {
 
 exports.getUserByEmailPassword = (email,password) => {
     const users = UsersSchema.find({"email":email, "password":password});
+    return users;
+}
+
+exports.addFav = (userId, productId) => {
+    const result = UsersSchema.findOneAndUpdate ({_id:userId}, {$addToSet:{"favourites":productId}}, {new: true});
+    return result;    
+}
+
+
+exports.removeFav = (userId, productId) => {
+    const result = UsersSchema.findOneAndUpdate ({_id:userId}, {$pull:{"favourites":productId}}, {new: true});
+    return result;    
+}
+
+exports.getUser= (id) => {
+    const users = UsersSchema.find({"_id":id});
     return users;
 }

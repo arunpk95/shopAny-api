@@ -50,3 +50,8 @@ exports.getProducts = (fromPrice,toPrice, filterCategory) => {
         return products;
     }
 }
+
+exports.getByIds = (ids) => {
+    const products = ProductsSchema.find({"_id":{ $in: ids } });
+    return products;
+}

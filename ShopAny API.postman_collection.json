@@ -70,7 +70,7 @@
 				{
 					"name": "Get Products by Seller",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "localhost:3000/api/seller/newseller/products",
@@ -91,7 +91,7 @@
 				{
 					"name": "Get Products by Category",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "localhost:3000/api/category/8iwdfnusdinbgiudu89fg/products",
@@ -112,10 +112,10 @@
 				{
 					"name": "Delete Product",
 					"request": {
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/product/6045cc304b08a171905750c0",
+							"raw": "localhost:3000/api/product/delete/6045cc304b08a171905750c0",
 							"host": [
 								"localhost"
 							],
@@ -123,6 +123,7 @@
 							"path": [
 								"api",
 								"product",
+								"delete",
 								"6045cc304b08a171905750c0"
 							]
 						}
@@ -131,23 +132,11 @@
 				},
 				{
 					"name": "Get Products",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"fromPrice\":0,\r\n    \"toPrice\":2299,\r\n    \"category\":\"\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:3000/api/products",
+							"raw": "localhost:3000/api/products?fromPrice=0&toPrice=22990&category=",
 							"host": [
 								"localhost"
 							],
@@ -155,6 +144,20 @@
 							"path": [
 								"api",
 								"products"
+							],
+							"query": [
+								{
+									"key": "fromPrice",
+									"value": "0"
+								},
+								{
+									"key": "toPrice",
+									"value": "22990"
+								},
+								{
+									"key": "category",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -196,11 +199,8 @@
 				},
 				{
 					"name": "Get User",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -221,6 +221,71 @@
 								"api",
 								"user",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fevourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/addFav/604a7a2b26b4a521549449b8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"604eef4472af9d0cdc4e5834",
+								"addFav",
+								"604a7a2b26b4a521549449b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/getFavs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"604eef4472af9d0cdc4e5834",
+								"getFavs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Favourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/604eef4472af9d0cdc4e5834/removeFav/60516f415384ef3be0c419231",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"604eef4472af9d0cdc4e5834",
+								"removeFav",
+								"60516f415384ef3be0c419231"
 							]
 						}
 					},
