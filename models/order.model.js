@@ -1,39 +1,35 @@
 const mongoose = require('../common/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema({
-   name:String,
-   description:String,
+const OrderSchema = new Schema({
+   user:{ type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+   status:Number,
    quantity:Number,
-   price:Number,
-   rating:Number,
-   deliveryFee:Number,
-   discount:Number,
-   expectedDeliveryDate:Number,
-   images:[String],
+   product:{ type: mongoose.Schema.Types.ObjectId, ref: 'products' },
    sellerId:String,
-   categoryId:String,
+   placedDate:String,
+   deliveryDate:String
 });
 
-const ProductsSchema = mongoose.model('products',productSchema);
+const OrdersSchema = mongoose.model('orders',OrderSchema);
 
-exports.createNewProduct = (productData) => {
-    const product = new ProductsSchema(productData);
-    return product.save();
+exports.newOrder = (ordersData) => {
+    const orders = OrdersSchema.insertMany(ordersData);
+    return orders;
 }
-exports.getProductsbySellerId = (sellerId) => {
-    const products = ProductsSchema.find({"sellerId":sellerId});
-    return products;
+exports.getOrdersByUserId = (userId) => {
+    const orders = OrdersSchema.find({"user":userId}).populate('user').populate('product');
+    return orders;
 }
-exports.getProductsByCategoryId = (categoryID) => {
-    const products = ProductsSchema.find({"categoryId":categoryID});
-    return products;
+exports.getOrderById = (id) => {
+    const orders = OrdersSchema.find({"_id":id}).populate('user').populate('product');
+    return orders;
 }
-exports.updateProduct = (id,productData) => {
-    const result =  ProductsSchema.findOneAndUpdate ({_id:id},productData,{new: true});
+exports.updateOrder = (id,orderData) => {
+    const result =  OrdersSchema.findOneAndUpdate ({_id:id},orderData,{new: true}).populate('user').populate('product');
     return result;    
 }
-exports.deleteProduct = (id) => {
-    const result = ProductsSchema.findOneAndDelete({_id:id});
+exports.deleteOrder = (id) => {
+    const result = OrdersSchema.findOneAndDelete({_id:id});
     return result;
 }

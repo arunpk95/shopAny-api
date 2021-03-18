@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1a@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
+							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"arun@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -250,7 +250,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\":\"60517ee6f6e9e549dcf6ff24\",\r\n    \"quantity\":10,\r\n    \"cartType\":0\r\n}",
+							"raw": "{\r\n    \"productId\":\"60517ee6f6e9e549dcf6ff24\",\r\n    \"quantity\":5,\r\n    \"cartType\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +258,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/addCart",
+							"raw": "localhost:3000/api/user/60528b1c3444b12f982d87b0/addCart",
 							"host": [
 								"localhost"
 							],
@@ -266,7 +266,7 @@
 							"path": [
 								"api",
 								"user",
-								"60518967ed36fa05ec9b4ef1",
+								"60528b1c3444b12f982d87b0",
 								"addCart"
 							]
 						}
@@ -279,7 +279,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/user/60518250c60b8858e4883295/getFavs",
+							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/getFavs",
 							"host": [
 								"localhost"
 							],
@@ -287,7 +287,7 @@
 							"path": [
 								"api",
 								"user",
-								"60518250c60b8858e4883295",
+								"60518967ed36fa05ec9b4ef1",
 								"getFavs"
 							]
 						}
@@ -300,7 +300,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/getCart",
+							"raw": "localhost:3000/api/user/60528b1c3444b12f982d87b0/getCart",
 							"host": [
 								"localhost"
 							],
@@ -308,7 +308,7 @@
 							"path": [
 								"api",
 								"user",
-								"60518967ed36fa05ec9b4ef1",
+								"60528b1c3444b12f982d87b0",
 								"getCart"
 							]
 						}
@@ -354,6 +354,141 @@
 								"60518967ed36fa05ec9b4ef1",
 								"removeCart",
 								"60517ee6f6e9e549dcf6ff24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"user\": \"60518967ed36fa05ec9b4ef1\",\r\n        \"status\": 1,\r\n        \"quantity\": 1,\r\n        \"product\": \"60517ee6f6e9e549dcf6ff24\",\r\n        \"sellerId\": \"uygfuakjfdasdyuf\",\r\n        \"placedDate\": \"2021-02-02\",\r\n        \"deliveryDate\": \"2021-03-03\"\r\n    },\r\n    {\r\n        \"user\": \"60518967ed36fa05ec9b4ef1\",\r\n        \"status\": 1,\r\n        \"quantity\": 1,\r\n        \"product\": \"605198be020e98001557407c\",\r\n        \"sellerId\": \"uygfuakjfdasdyuf\",\r\n        \"placedDate\": \"2021-02-02\",\r\n        \"deliveryDate\": \"2021-03-04\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/order/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"user\": \"60518967ed36fa05ec9b4ef1\",\r\n        \"status\": 2,\r\n        \"quantity\": 1,\r\n        \"product\": \"60517ee6f6e9e549dcf6ff24\",\r\n        \"sellerId\": \"uygfuakjfdasdyuf\",\r\n        \"placedDate\": \"2021-02-02\",\r\n        \"deliveryDate\": \"2021-03-03\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/order/6052b9730b2dd974d8e559bc/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"6052b9730b2dd974d8e559bc",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/order/6052b9730b2dd974d8e559bc/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"6052b9730b2dd974d8e559bc",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders By User ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/60518967ed36fa05ec9b4ef1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"60518967ed36fa05ec9b4ef1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/order/6052b9730b2dd974d8e559bd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"6052b9730b2dd974d8e559bd"
 							]
 						}
 					},
