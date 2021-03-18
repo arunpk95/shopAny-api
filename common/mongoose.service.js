@@ -10,7 +10,8 @@ const options = {
     bufferMaxEntries: 0,
     //geting rid off the depreciation errors
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
     
 };
 const connectWithRetry = () => {

@@ -27,4 +27,7 @@ exports.routesConfig = function (app) {
     app.post('/api/user/:userId/getCart',[
         UsersController.getCart
     ])
+    app.post('/api/user/:userId/updateCart',[
+        UsersController.addCart
+    ])
 };

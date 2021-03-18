@@ -72,15 +72,45 @@ exports.getFavs = (req, res) => {
 }
 
 exports.addCart = (req, res) => {
-    UserModel.addCart(req.params.userId, req.body.productId, req.body.quantity, req.body.cartType)
-    .then((result) => {
-        res.status(200).send({ status: "success", user: result });
-        return;
+
+    UserModel.getIfProductInCart(req.params.userId, req.body.productId)
+    .then((resultUsers) => {
+        if(resultUsers.length > 0){
+            UserModel.removeCart(req.params.userId, req.body.productId)
+            .then((result) => {
+                UserModel.addCart( req.params.userId, req.body.productId, req.body.quantity, req.body.cartType)
+                .then((result) => {
+                    res.status(200).send({ status: "success", user: result });
+                    return;
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+                })    
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+            })    
+        }
+        else
+        {
+            UserModel.addCart( req.params.userId, req.body.productId, req.body.quantity, req.body.cartType)
+            .then((result) => {
+                res.status(200).send({ status: "success", user: result });
+                return;
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+            })    
+        }
     })
     .catch(err => {
         console.log(err);
         res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
     })
+
 }
 
 exports.removeCart = (req, res) => {
