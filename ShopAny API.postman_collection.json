@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Logitech Keyboard v1\",\r\n   \"description\": \"Perfect stroke keys - spherical-dished keys match the shape of your fingertips, Offering satisfying feedback with every tap<BULLET>Comfort and stability - Type with confidence on a keyboard crafted for comfort, stability, and precision<BULLET>Smart illumination -hand proximity detection and automatic backlighting\",\r\n   \"quantity\": 20,\r\n   \"price\": 1299.99,\r\n   \"rating\":3,\r\n   \"deliveryFee\":10,\r\n   \"discount\":5,\r\n   \"expectedDeliveryDate\":5,\r\n   \"images\":[\"https://www.logitech.com/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png\",\r\n   \"https://resource.logitech.com/w_420,h_420,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/keyboards/mx-keys/gallery/deu-mx-keys-gallery-npr-graphite-3-4-front.png\"],\r\n   \"categoryId\": \"8iwdfnusdinbgiudu89fg\",\r\n   \"sellerId\": \"ikjsdnfgsdnmfgjnk\",\r\n\r\n}",
+							"raw": "{\r\n   \"name\": \"Tattooist of Auschwitz\",\r\n   \"description\": \"This beautiful, illuminating tale of hope and courage is based on interviews that were conducted with Holocaust survivor and Auschwitz-Birkenau tattooist Ludwig (Lale) Sokolov—an unforgettable love story in the midst of atrocity.\",\r\n   \"quantity\": 1000,\r\n   \"price\": 70.04,\r\n   \"rating\": 4.5,\r\n   \"deliveryFee\": 3,\r\n   \"discount\": 10,\r\n   \"expectedDeliveryDate\": 1,\r\n   \"images\":[\"https://images-na.ssl-images-amazon.com/images/I/415TbkTEY4L._SX331_BO1,204,203,200_.jpg\",\"https://images-na.ssl-images-amazon.com/images/I/415TbkTEY4L._SX331_BO1,204,203,200_.jpg\"],\r\n   \"categoryId\": \"5\",\r\n   \"sellerId\": \"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/category/8iwdfnusdinbgiudu89fg/products",
+							"raw": "localhost:3000/api/category/3/products",
 							"host": [
 								"localhost"
 							],
@@ -102,7 +102,7 @@
 							"path": [
 								"api",
 								"category",
-								"8iwdfnusdinbgiudu89fg",
+								"3",
 								"products"
 							]
 						}
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Mark\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"arun@abc.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"asdsakdhaskhdkjahs\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
+							"raw": "{\r\n   \"name\": \"Sriram Elangovan\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sriram@gmail.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"650 Kennedy Rd, Scarborough, ON M1P 2K4\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,7 +199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sel1a@abc.coma\"\r\n}\r\n",
+							"raw": "{\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sriram@gmail.com\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -489,6 +489,140 @@
 								"api",
 								"order",
 								"6052b9730b2dd974d8e559bd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"Books\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/category/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"Books1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/category/:id/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								":id",
+								"update"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/api/category/:id/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"api",
+								"category",
+								":id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category with ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/api/category/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"api",
+								"category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
 							]
 						}
 					},
