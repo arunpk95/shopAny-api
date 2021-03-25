@@ -13,5 +13,8 @@ exports.routesConfig = function (app) {
     app.post('/api/category/:id/delete',[
         CategoryController.delete
     ])
+    app.post('/api/categories',[
+        CategoryController.getCategories
+    ])
 
 };

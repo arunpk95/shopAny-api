@@ -48,3 +48,15 @@ exports.delete = (req, res) => {
         res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
     })
 }
+
+exports.getCategories = (req,res) => {
+    CategoryModel.getCategories()
+    .then((result) => {
+        res.status(200).send({ status: "success", categories: result });
+        return;
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(201).send({ status: "failed", errors: [{ code: -1, msg: "Internal Database Error" }] });
+    })
+}

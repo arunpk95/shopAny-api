@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Sriram Elangovan\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sriram@gmail.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"650 Kennedy Rd, Scarborough, ON M1P 2K4\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
+							"raw": "{\r\n   \"name\": \"Sriram Elangovan\",\r\n   \"companyName\":\"\",\r\n   \"password\": \"pass123\",\r\n   \"email\": \"sriram@gmail.com\",\r\n   \"phoneNumber\": 9876543210,\r\n   \"address\": \"650 Kennedy Rd, Scarborough, ON M1P 2K4\",\r\n   \"userType\": 1,\r\n    \"favourites\":[],\r\n   \"cart\":[]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -506,7 +506,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryName\":\"Books\"\r\n}",
+							"raw": "{\r\n    \"categoryName\":\"Games\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -543,7 +543,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/category/:id/update",
+							"raw": "localhost:3000/api/category/605bc10a9983ca153ce9b8b7/update",
 							"host": [
 								"localhost"
 							],
@@ -551,14 +551,8 @@
 							"path": [
 								"api",
 								"category",
-								":id",
+								"605bc10a9983ca153ce9b8b7",
 								"update"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
 							]
 						}
 					},
@@ -579,23 +573,16 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/api/category/:id/delete",
+							"raw": "localhost:3000/api/category/605bc10a9983ca153ce9b8b7/delete",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"api",
 								"category",
-								":id",
+								"605bc10a9983ca153ce9b8b7",
 								"delete"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
 							]
 						}
 					},
@@ -607,28 +594,76 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/api/category/:id",
+							"raw": "localhost:3000/api/category/605bc10a9983ca153ce9b8b7",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"api",
-								"api",
 								"category",
-								":id"
+								"605bc10a9983ca153ce9b8b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
 							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "File Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadedFile",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "type",
+							"value": "jpg",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tikmetrics.com/fileUpload/",
+					"protocol": "https",
+					"host": [
+						"tikmetrics",
+						"com"
+					],
+					"path": [
+						"fileUpload",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

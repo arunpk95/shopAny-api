@@ -25,3 +25,8 @@ exports.deleteCategory = (id) => {
     const result = CategoriesSchema.findOneAndDelete({_id:id});
     return result;
 }
+
+exports.getCategories = () => {
+    const categories = CategoriesSchema.find({});
+    return categories;
+}
