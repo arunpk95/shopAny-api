@@ -55,3 +55,8 @@ exports.getByIds = (ids) => {
     const products = ProductsSchema.find({"_id":{ $in: ids } });
     return products;
 }
+
+exports.getById = (id) => {
+    const product = ProductsSchema.findById(id);
+    return product;
+}
