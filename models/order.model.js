@@ -33,3 +33,7 @@ exports.deleteOrder = (id) => {
     const result = OrdersSchema.findOneAndDelete({_id:id});
     return result;
 }
+exports.getOrderBySellerId = (sellerId) => {
+    const orders = OrdersSchema.find({"sellerId":sellerId}).populate('user').populate('product');
+    return orders;
+}

@@ -16,5 +16,11 @@ exports.routesConfig = function (app) {
     app.post('/api/user/:userId/orders',[
         OrderController.getOrdersByUserId
     ])
+        
+    app.post('/api/seller/:sellerId/orders',[
+        OrderController.getOrdersBySellerId
+    ])
+
+    
     
 };
