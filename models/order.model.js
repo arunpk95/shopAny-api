@@ -18,7 +18,7 @@ exports.newOrder = (ordersData) => {
     return orders;
 }
 exports.getOrdersByUserId = (userId) => {
-    const orders = OrdersSchema.find({"user":userId}).populate('user').populate('product');
+    const orders = OrdersSchema.find({"user":userId}).populate('user').populate('product').populate('sellerId');
     return orders;
 }
 exports.getOrderById = (id) => {
@@ -34,6 +34,6 @@ exports.deleteOrder = (id) => {
     return result;
 }
 exports.getOrderBySellerId = (sellerId) => {
-    const orders = OrdersSchema.find({"sellerId":sellerId}).populate('user').populate('product');
+    const orders = OrdersSchema.find({"sellerId":sellerId}).populate('user').populate('product').populate('sellerId');
     return orders;
 }
