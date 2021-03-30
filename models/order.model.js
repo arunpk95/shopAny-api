@@ -6,7 +6,7 @@ const OrderSchema = new Schema({
    status:Number,
    quantity:Number,
    product:{ type: mongoose.Schema.Types.ObjectId, ref: 'products' },
-   sellerId:String,
+   sellerId:{ type: mongoose.Schema.Types.ObjectId, ref: 'users' },
    placedDate:String,
    deliveryDate:String
 });
