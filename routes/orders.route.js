@@ -21,6 +21,8 @@ exports.routesConfig = function (app) {
         OrderController.getOrdersBySellerId
     ])
 
-    
+    app.post('/api/seller/:sellerId/homeStats',[
+        OrderController.getHomeStats
+    ])
     
 };
