@@ -24,5 +24,17 @@ exports.routesConfig = function (app) {
     app.post('/api/seller/:sellerId/homeStats',[
         OrderController.getHomeStats
     ])
+
+    app.post('/api/seller/:sellerId/categoryChart',[
+        OrderController.getcategoryChart
+    ])
+    
+    app.post('/api/seller/:sellerId/productChart',[
+        OrderController.getproductChart
+    ])
+
+    app.post('/api/seller/:sellerId/revenueChart',[
+        OrderController.getpieChart
+    ])
     
 };
