@@ -118,7 +118,7 @@ exports.getHomeStats = (req, res) => {
                                     }
                                     productSales.push({ x: sellerProducts[productNum].name, y: saleCountProduct });
                                     if(revenueForProduct>0){
-                                    pieChartData.data.push({ x: revenueForProduct, y: revenueForProduct });
+                                    pieChartData.data.push({ x: "$"+revenueForProduct, y: "$"+revenueForProduct });
                                     pieChartData.productName.push({ name: sellerProducts[productNum].name });
                                     }
 
@@ -237,7 +237,7 @@ exports.getproductChart = (req, res) => {
                             }
                             productSales.push({ x: sellerProducts[productNum].name, y: saleCountProduct });
                             if(revenueForProduct>0){
-                            pieChartData.data.push({ x: revenueForProduct, y: revenueForProduct });
+                            pieChartData.data.push({ x: "$"+revenueForProduct, y: "$"+revenueForProduct });
                             pieChartData.productName.push({ name: sellerProducts[productNum].name });
                             }
 
@@ -300,7 +300,7 @@ exports.getpieChart = (req, res) => {
                             }
                             productSales.push({ x: sellerProducts[productNum].name, y: saleCountProduct });
                             if(revenueForProduct>0){
-                            pieChartData.data.push({ x: revenueForProduct, y: revenueForProduct });
+                            pieChartData.data.push({ x: "$"+revenueForProduct, y: "$"+revenueForProduct });
                             pieChartData.productName.push({ name: sellerProducts[productNum].name });
                             }
                         }
